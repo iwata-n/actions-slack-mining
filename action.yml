@@ -1,0 +1,9 @@
+name: 'Run'
+description: 'run'
+inputs:
+  param:
+    description: 'param'
+    default: 'default'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
