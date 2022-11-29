@@ -24,7 +24,6 @@ jobs:
       - name: Run
         uses: iwata-n/actions-slack-mining@main
         with:
-          param: 'parameter'
           date_from: ${{ env.DATE_FROM }}
           date_to: ${{ env.DATE_TO }}
           group_mention: ${{ secrets.SLACK_GROUP }}
