@@ -1,9 +1,25 @@
 name: 'Run'
 description: 'run'
 inputs:
-  param:
-    description: 'param'
-    default: 'default'
+  date_from:
+    description: 'from'
+  date_to:
+    description: 'to'
+  group_mention:
+    description: 'Target group'
+  slack_channel_id:
+    description: 'Post result'
+  slack_bot_token:
+    description: 'Slack Bot Token'
+  slack_user_token:
+    description: 'Slack User Token'
 runs:
   using: 'docker'
   image: 'Dockerfile'
+  args:
+    - ${{ inputs.date_from }}
+    - ${{ inputs.date_to }}
+    - ${{ inputs.group_mention }}
+    - ${{ inputs.slack_channel_id }}
+    - ${{ inputs.slack_bot_token }}
+    - ${{ inputs.slack_user_token }}
